@@ -135,21 +135,27 @@ class _LoginPageState extends State<LoginPage> {
                   borderRadius: BorderRadius.circular(Dimens.dp8),
                 ),
               ),
-              onPressed: () async {
-                if (FirebaseAuth.instance.currentUser == null) {
-                  GoogleSignInAccount? account = await GoogleSignIn().signIn();
+              onPressed: () {
+//                 if (FirebaseAuth.instance.currentUser == null) {
+//                   GoogleSignInAccount? account = await GoogleSignIn().signIn();
 
-                  if (account != null) {
-                    GoogleSignInAuthentication auth =
-                        await account.authentication;
-                    OAuthCredential credential = GoogleAuthProvider.credential(
-                      accessToken: auth.accessToken,
-                      idToken: auth.idToken,
-                    );
-                    await FirebaseAuth.instance
-                        .signInWithCredential(credential);
-                  }
-                }
+//                   if (account != null) {
+//                     GoogleSignInAuthentication auth =
+//                         await account.authentication;
+//                     OAuthCredential credential = GoogleAuthProvider.credential(
+//                       accessToken: auth.accessToken,
+//                       idToken: auth.idToken,
+//                     );
+//                     await FirebaseAuth.instance
+//                         .signInWithCredential(credential);
+//                   }
+//                 }
+                Navigator.push<dynamic>(
+                  context,
+                  MaterialPageRoute<dynamic>(
+                    builder: (context) => InformationA(),
+                  ),
+                );
               },
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -184,7 +190,13 @@ class _LoginPageState extends State<LoginPage> {
                   borderRadius: BorderRadius.circular(Dimens.dp8),
                 ),
               ),
-              onPressed: () {},
+              onPressed: () {
+              Navigator.push<dynamic>(
+                  context,
+                  MaterialPageRoute<dynamic>(
+                    builder: (context) => InformationA(),
+                  ),
+                );},
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
