@@ -71,6 +71,8 @@ class _OnBoardingState extends State<OnBoardingPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Image(
+                  width: 187,
+                  height: 223,
                   image: AssetImage(MainAssets.onboardingImg),
                 ),
                 SizedBox(
